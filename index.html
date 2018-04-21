@@ -4,33 +4,37 @@
 <head>
     <title>Notepad++ Replace regex</title>
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.0/css/bootstrap.min.css" integrity="sha384-9gVQ4dYFwwWSjIDZnLEWnxCjeSWFphJiwGPXr1jddIhOegiu1FwO5qRGvFXOdJZ4" crossorigin="anonymous">
 </head>
 
 <body>
     <div class="container">
-        <h1>Notepad++ replace with regular expresion</h1>
-        <form id="form_reg_exp">
+        <header class="text-center">
+            <h1>Notepad++ replace with regular expresion</h1>
+        </header>
+        <form id="form_reg_exp" class="pb-5">
             <div class="form-group">
                 <label for="txt_find">Strings to find:</label>
-                <textarea id="txt_find" class="form-control" rows="4"></textarea>
+                <textarea id="txt_find" class="form-control" rows="2" required></textarea>
                 <small id="txt_find_help" class="form-text text-muted">(separated by commas)</small>
             </div>
             <div class="form-group">
                 <label for="txt_replace">Strings to replace:</label>
-                <textarea id="txt_replace" class="form-control" rows="4"></textarea>
+                <textarea id="txt_replace" class="form-control" rows="2" required></textarea>
                 <small id="txt_replace_help" class="form-text text-muted">(separated by commas)</small>
             </div>
             <button type="submit" class="btn btn-primary">Get regular expressions</button>
         </form>
-        <br><br>
-        <label id="info"></label><br>
-        <label id="find_regex" style="color:green;"></label><br>
-        <label id="replace_regex" style="color:red;"></label>
+
+        <div class="alert alert-info">
+            <p class="mb-0 text-info" id="info">Here displays strings numbers and errors</p>
+        </div>
+
+        <div class="container" id="results"></div>
     </div>
 
-
+    <script src="https://unpkg.com/clipboard@2.0.0/dist/clipboard.min.js"></script>
     <script src="index.js"></script>
 </body>
 
