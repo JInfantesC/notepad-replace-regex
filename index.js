@@ -1,9 +1,10 @@
 //index.js
 window.onload = load;
 function load(){
-    var btn_run=document.getElementById("btn_run");
+    var form_element=document.getElementById("form_reg_exp");
 
-    btn_run.addEventListener('click', function() {
+    form_element.addEventListener('submit', function(e) {
+        e.preventDefault();
         var find_array= document.getElementById("txt_find").value.split(",");
         var replace_array=document.getElementById("txt_replace").value.split(",");
         //Check if ready

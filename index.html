@@ -10,10 +10,21 @@
 
 <body>
     <div class="container">
-        <h1>Notepad++ replace with regular expresion</h1> Find:
-        <textarea id="txt_find" cols="60" rows="4"></textarea><br> Replace:
-        <textarea id="txt_replace" cols="60" rows="4"></textarea><br>
-        <input type="button" id="btn_run" value="Get string"><br><br>
+        <h1>Notepad++ replace with regular expresion</h1>
+        <form id="form_reg_exp">
+            <div class="form-group">
+                <label for="txt_find">Strings to find:</label>
+                <textarea id="txt_find" class="form-control" rows="4"></textarea>
+                <small id="txt_find_help" class="form-text text-muted">(separated by commas)</small>
+            </div>
+            <div class="form-group">
+                <label for="txt_replace">Strings to replace:</label>
+                <textarea id="txt_replace" class="form-control" rows="4"></textarea>
+                <small id="txt_replace_help" class="form-text text-muted">(separated by commas)</small>
+            </div>
+            <button type="submit" class="btn btn-primary">Get regular expressions</button>
+        </form>
+        <br><br>
         <label id="info"></label><br>
         <label id="find_regex" style="color:green;"></label><br>
         <label id="replace_regex" style="color:red;"></label>
