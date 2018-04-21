@@ -1,10 +1,13 @@
+//index.js
+window.onload = load;
+function load(){
+    var btn_run=document.getElementById("btn_run");
 
-jQuery(window).load(function() {
-    jQuery("#get_regex").bind("click", function() {
-        var find_array = jQuery("#find").val().split(",");
-        var replace_array = jQuery("#replace").val().split(",");
-
-        jQuery("#info").html("Find= " + find_array.length + "<br>Replace=" + replace_array.length);
+    btn_run.addEventListener('click', function() {
+        var find_array= document.getElementById("txt_find").value.split(",");
+        var replace_array=document.getElementById("txt_replace").value.split(",");
+        //Check if ready
+        document.getElementById('info').innerHTML = "Find= " + find_array.length + "<br>Replace=" + replace_array.length;
 
         var find_regex = "";
         var replace_regex = "";
@@ -24,8 +27,9 @@ jQuery(window).load(function() {
 
         }
         find_regex = find_regex.substring(0, find_regex.length - 1);
+        document.getElementById('find_regex').innerHTML =find_regex;
+        document.getElementById('replace_regex').innerHTML =replace_regex;
 
-        jQuery("#find_regex").html(find_regex);
-        jQuery("#replace_regex").html(replace_regex);
-    });
-});
+    }, false);
+
+}
